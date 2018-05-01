@@ -153,9 +153,22 @@ class MotionPlanning(Drone):
         # Set goal as some arbitrary position on the grid
         grid_goal = (-north_offset + 10, -east_offset + 10, TARGET_ALTITUDE)
         # TODO: adapt to set goal as latitude / longitude position and convert
-        north_goal = np.random.randint(north_offset, north_max)
-        east_goal = np.random.randint(east_offset, east_max)
-        grid_goal = (north_goal, east_goal)
+        # north_goal = np.random.randint(north_offset, north_max)
+        # east_goal = np.random.randint(east_offset, east_max)
+        # lat_goal = np.random.randint(-80, 84)
+        # lon_goal = np.random.randint(-180, 180)
+        # grid_goal = (lon_goal, lat_goal, TARGET_ALTITUDE)
+        # grid_goal = global_to_local(grid_goal, self.global_home)
+        # grid_goal = (int(grid_goal[1]/1000), int(grid_goal[0]/10000))
+        # grid_goal = (north_goal, east_goal)
+        #POSSIBLE GRID_GOAL LOCATIONS THAT WORK
+        #   (21, 120)
+        #   (571, 232)
+        #   (60, 170)
+        #   (457, 377)
+        #   (101, 91)
+        #   (15, 157)
+        grid_goal = (101, 91)
         print(f"GRID_GOAL = {grid_goal}")
 
         # Run A* to find a path from start to goal
